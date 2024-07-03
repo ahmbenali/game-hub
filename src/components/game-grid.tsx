@@ -1,20 +1,10 @@
-import { useEffect, useState } from 'react'
-// instead axios one can use apiClient
+
 import { Text } from '@chakra-ui/react'
-import { FetchGamesResponse, Game } from '../../types'
-import axios from '../services/api-client'
+import { useGames } from '../hooks/useGames'
+
 
 function GameGrid() {
-  const [games, setGames] = useState<Game[]>([])
-  const [error, setError] = useState('')
-
-  useEffect(() => {
-    axios
-      .get<FetchGamesResponse>('/xgames')
-      .then(res => setGames(res.data.results))
-      .catch(err => setError(err.message))
-  }, [])
-
+  const { games, error } = useGames()
   return (
     <>
       <Text>{error && <li>{error}</li>}</Text>
