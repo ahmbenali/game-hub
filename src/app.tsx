@@ -12,7 +12,6 @@ function App() {
     setSelectedGenre(genre)
   }
 
-
   return (
     <Grid
       templateAreas={{
@@ -22,8 +21,7 @@ function App() {
       templateColumns={{
         base: '1fr',
         lg: '200px 1fr', // first col takes 200px and the second takes the rest of the space
-      }}
-    >
+      }}>
       <GridItem area="nav">
         <Navbar />
       </GridItem>
@@ -31,7 +29,10 @@ function App() {
         <GridItem
           area="aside"
           px={5}>
-          <GenresList onSelectGenre={handleSelectGenre} />
+          <GenresList
+            onSelectGenre={handleSelectGenre}
+            selectedGenre={selectedGenre}
+          />
         </GridItem>
       </Show>
       <GridItem area="main">
