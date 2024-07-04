@@ -1,9 +1,21 @@
 // instead apiClient one can use apiClient
-import { Game, Genre } from '~/types'
+import { Game, Genre, Platform } from '~/types'
 import useData from './use-data'
 
-const useGames = (selectedGenre: Genre | null) =>
-  useData<Game>('/games', { params: { genres: selectedGenre?.id } }, [selectedGenre?.id])
+const useGames = (
+  selectedGenre: Genre | null,
+  selectedPlatform: Platform | null
+) =>
+  useData<Game>(
+    '/games',
+    {
+      params: {
+        genres: selectedGenre?.id,
+        platforms: selectedPlatform?.id,
+      },
+    },
+    [selectedGenre?.id, selectedPlatform?.id]
+  )
 
 // export const useGames = () => {
 //   const [games, setGames] = useState<Game[]>([])
