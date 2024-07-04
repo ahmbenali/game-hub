@@ -12,13 +12,13 @@ function GameCard({ game }: { game: Game }) {
       {/* <Image src={background_image} /> */}
       <Image src={getCroppedImageUrl(background_image)!} />
       <CardBody>
+        <Heading fontSize="2xl">{name}</Heading>
         <HStack justifyContent="space-between">
           <PlatformIconList
             platforms={parent_platforms?.map(p => p.platform)}
           />
           <CriticScore score={metacritic!} />
         </HStack>
-        <Heading fontSize="2xl">{name}</Heading>
       </CardBody>
     </Card>
   )

@@ -12,6 +12,12 @@ type FetchGamesResponse = {
   // previous: string
   results: Game[]
 }
+type FetchGenresResponse = {
+  count: number
+  // next: string
+  // previous: string
+  results: Game[]
+}
 
 
 type Platform = {
@@ -20,4 +26,10 @@ type Platform = {
   slug: string
 }
 
-export type { FetchGamesResponse, Game, Platform }
+type Genre = {
+  id: number
+  name: string
+}
+
+export type { FetchGamesResponse, FetchGenresResponse, Game, Genre, Platform }
+

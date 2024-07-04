@@ -8,7 +8,6 @@ function GameGrid() {
   const { games, error, isLoading } = useGames()
   const skeletons = [1, 2, 3, 4, 5, 6, 7]
 
-
   if (error) return <Text>{error}</Text>
 
   return (
@@ -17,11 +16,12 @@ function GameGrid() {
       spacing={4}
       p={5}
     >
-      {isLoading && skeletons.map((skeleton) => (
-        <GameCardContainer key={skeleton}>
-          <GameCardSkeleton />
-        </GameCardContainer>
-      ))}
+      {isLoading &&
+        skeletons.map(skeleton => (
+          <GameCardContainer key={skeleton}>
+            <GameCardSkeleton />
+          </GameCardContainer>
+        ))}
       {games.map(game => (
         <GameCardContainer>
           <GameCard
