@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 // instead axios one can use apiClient
-import { FetchGamesResponse, Game } from '../../types'
-import axios from '../services/api-client'
 import { CanceledError } from 'axios'
+import { FetchGamesResponse, Game } from '~/types'
+import axios from '../services/api-client'
 
 export const useGames = () => {
   const [games, setGames] = useState<Game[]>([])
