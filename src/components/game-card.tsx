@@ -5,7 +5,12 @@ import CriticScore from './critic-score'
 import PlatformIconList from './platform-icon-list'
 
 function GameCard({ game }: { game: Game }) {
-  const { name, background_image, parent_platforms, metacritic } = game
+  const {
+    name,
+    background_image,
+    parent_platforms,
+    metacritic
+  } = game
 
   return (
     <Card>

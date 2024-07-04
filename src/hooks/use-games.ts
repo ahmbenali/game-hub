@@ -1,11 +1,13 @@
-// import { useEffect, useState } from 'react'
-// import { CanceledError } from 'axios'
-import { Genre } from '~/types'
-// import axios from '../services/api-client' // axios -> apiClient
+// instead apiClient one can use apiClient
+import { Game } from '~/types'
 import useData from './use-data'
 
-// const useGenres = () => {
-//   const [genres, setGenres] = useState<Genre[]>([])
+const useGames = () => useData<Game>('/games')
+
+
+
+// export const useGames = () => {
+//   const [games, setGames] = useState<Game[]>([])
 //   const [error, setError] = useState('')
 //   const [isLoading, setLoading] = useState(false)
 
@@ -14,10 +16,10 @@ import useData from './use-data'
 
 //     setLoading(true)
 //     console.log({ isLoading })
-//     axios
-//       .get<FetchGamesResponse>('/genres')
+//     apiClient
+//       .get<FetchGamesResponse>('/games')
 //       .then(res => {
-//         setGenres(res.data.results)
+//         setGames(res.data.results)
 //       })
 //       .catch(err => {
 //         if (err instanceof CanceledError) return
@@ -29,9 +31,7 @@ import useData from './use-data'
 //   }, [])
 
 
-//   return { genres, error, isLoading }
+//   return { games, error, isLoading }
 // }
 
-const useGenres = () => useData<Genre>('/genres')
-
-export default useGenres
+export default useGames

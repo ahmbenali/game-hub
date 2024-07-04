@@ -1,11 +1,12 @@
 import useGenres from '../hooks/use-genres'
 
 function GenresList() {
-  const { genres } = useGenres()
+  // const { data } = useData<Genre>('/genres')
+  const { data } = useGenres() // hide http-request from component
 
   return (
     <ul>
-      {genres.map(({ id, name }) => (
+      {data.map(({ id, name }) => (
         <li key={id}>{name}</li>
       ))}
     </ul>
