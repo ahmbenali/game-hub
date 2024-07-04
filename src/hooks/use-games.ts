@@ -1,10 +1,9 @@
 // instead apiClient one can use apiClient
-import { Game } from '~/types'
+import { Game, Genre } from '~/types'
 import useData from './use-data'
 
-const useGames = () => useData<Game>('/games')
-
-
+const useGames = (selectedGenre: Genre | null) =>
+  useData<Game>('/games', { params: { genres: selectedGenre?.id } }, [selectedGenre?.id])
 
 // export const useGames = () => {
 //   const [games, setGames] = useState<Game[]>([])
@@ -29,7 +28,6 @@ const useGames = () => useData<Game>('/games')
 
 //     return () => controller.abort()
 //   }, [])
-
 
 //   return { games, error, isLoading }
 // }
