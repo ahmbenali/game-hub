@@ -9,8 +9,10 @@ function GameCard({ game }: { game: Game }) {
 
   return (
     <Card
+      width={{ base: '100%', md: '320px' }}
       borderRadius={10}
-      overflow="hidden">
+      overflow="hidden"
+    >
       {/* <Image src={background_image} /> */}
       <Image src={getCroppedImageUrl(background_image)!} />
       <CardBody>
