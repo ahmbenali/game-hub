@@ -6,7 +6,8 @@ function GameCardContainer({ children }: PropsWithChildren) {
     <Box
       borderRadius={10}
       overflow="hidden"
-      width={{ base: '100%', md: '320px' }}
+      // width={{ base: '100%', md: '300px' }}
+      width='100%'
     >
       {children}
     </Box>
