@@ -1,4 +1,4 @@
-import { Box, HStack, Image } from '@chakra-ui/react'
+import { Box, Flex, HStack, Image } from '@chakra-ui/react'
 import logo from '../assets/logo.webp'
 import SearchInput from './search-input'
 import ThemeToggler from './theme-toggler'
@@ -18,13 +18,15 @@ function Navbar({ onSearch }: Props) {
           '0 1px 3px rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.3)',
       }}
     >
-      <HStack
+      <Flex
+        alignItems="center"
+        justify={"space-between"}
         mx="auto"
         mb="20px"
-        justifyContent="center"
-        p="10px"
-        width={{ base: '100%', md: '600px', lg: '800px', xl: '1000px' }}
-        gap={{ base: '30px', md: '100px' }}
+        // justifyContent="space-between"
+        p="12px"
+        // width={{ base: '100%', md: '80%', lg: '70%' }}
+        // gap={{ base: '10px', md: '100px' }}
       >
         <Image
           boxSize="50px"
@@ -33,7 +35,7 @@ function Navbar({ onSearch }: Props) {
         />
         <SearchInput onSearch={onSearch} />
         <ThemeToggler />
-      </HStack>
+      </Flex>
     </Box>
   )
 }

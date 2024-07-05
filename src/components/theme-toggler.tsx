@@ -9,8 +9,14 @@ function ThemeToggler() {
         colorScheme="green"
         isChecked={theme === 'dark'}
         onChange={toggleTheme}
+        pl="2"
       />
-      {/* <Text whiteSpace="nowrap">Dark Mode</Text> */}
+      <Text
+        whiteSpace="nowrap"
+        display={{ base: 'none', md: 'block' }}
+      >
+        Dark Mode
+      </Text>
     </HStack>
   )
 }

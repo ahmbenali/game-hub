@@ -15,9 +15,14 @@ function SearchInput({ onSearch }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      style={{ flex: '1', display: 'flex', justifyContent: 'center' }}
+
+    >
       <InputGroup
-        width={{ base: '90%', md: '400px', lg: '500px', xl: '600px' }}
+        width={{ base: '100%', md: '70%' }}
+        // width='100%'
       >
         {/* <InputLeftElement pointerEvents="none" children="🔎" /> */}
         <InputLeftElement children={<BsSearch />} />
