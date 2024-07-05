@@ -19,6 +19,7 @@ const useGames = (
         // platforms: selectedPlatform?.id,
         genres: genreId,
         platforms: platformId,
+        ordering: gameQuery.sortOrder,
       },
     },
     // [genreId, platformId]

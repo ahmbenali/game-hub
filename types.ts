@@ -19,7 +19,6 @@ type FetchGenresResponse = {
   results: Game[]
 }
 
-
 type Platform = {
   id: number
   name: string
@@ -32,12 +31,18 @@ type Genre = {
   image_background: string
 }
 
-
 // query object pattern matching
 type GameQuery = {
   genre: Genre | null
   platform: Platform | null
+  sortOrder: string
 }
 
-export type { FetchGamesResponse, FetchGenresResponse, Game, Genre, Platform, GameQuery }
-
+export type {
+  FetchGamesResponse,
+  FetchGenresResponse,
+  Game,
+  GameQuery,
+  Genre,
+  Platform,
+}

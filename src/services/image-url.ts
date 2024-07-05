@@ -1,4 +1,5 @@
 export const getCroppedImageUrl = (url: string) => {
+  // some images don't have 'media' in the url
   if (!url) return null
 
   // get the index after '/media' in the url

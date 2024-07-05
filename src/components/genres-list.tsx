@@ -15,7 +15,7 @@ type Props = {
   selectedGenre: Genre | null
 }
 
-function GenresList({ onSelectGenre, selectedGenre }: Props) {
+function GenresList({ selectedGenre, onSelectGenre }: Props) {
   // const { data } = useData<Genre>('/genres')
   // hide http-request from component
   const { data: genres, isLoading, error } = useGenres()
@@ -41,10 +41,10 @@ function GenresList({ onSelectGenre, selectedGenre }: Props) {
               />
               <Button
                 onClick={() => onSelectGenre(genre)}
-                fontWeight={selectedGenre?.id === id ? 'bold' : 'normal'}
                 whiteSpace="normal"
                 textAlign="left"
-                fontSize="md"
+                fontSize="lg"
+                fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}
                 variant="link"
                 color={{}}
                 _hover={{

@@ -16,7 +16,7 @@ function App() {
   // to avoid the ugly states -> apply query object pattern
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
 
-  const { genre, platform } = gameQuery
+  const { genre, platform } = gameQuery ?? {}
 
   return (
     <Grid
@@ -55,7 +55,12 @@ function App() {
               setGameQuery({ ...gameQuery, platform })
             }
           />
-          <SortSelector />
+          <SortSelector
+            sortOrder={gameQuery.sortOrder}
+            onSelectOrder={sortOrder =>
+              setGameQuery({ ...gameQuery, sortOrder })
+            }
+          />
         </HStack>
         <GameGrid
           // selectedGenre={genre}
