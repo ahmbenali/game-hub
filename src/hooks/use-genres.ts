@@ -1,8 +1,9 @@
 // import { useEffect, useState } from 'react'
 // import { CanceledError } from 'axios'
-import { Genre } from '~/types'
+import genres from '../data/genres'
 // import axios from '../services/api-client' // axios -> apiClient
-import useData from './use-data'
+// import useData from './use-data'
+// since genres ara almost not mutable, we can convert it to static data -> no need for server requests
 
 // const useGenres = () => {
 //   const [genres, setGenres] = useState<Genre[]>([])
@@ -28,10 +29,15 @@ import useData from './use-data'
 //     return () => controller.abort()
 //   }, [])
 
-
 //   return { genres, error, isLoading }
 // }
 
-const useGenres = () => useData<Genre>('/genres')
+// const useGenres = () => useData<Genre>('/genres')
+
+const useGenres = () => ({
+  data: genres,
+  error: null,
+  isLoading: false,
+})
 
 export default useGenres
