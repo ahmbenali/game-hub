@@ -1,7 +1,8 @@
-import { Flex, Grid, GridItem, Show } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Show } from '@chakra-ui/react'
 import { useState } from 'react'
 import { GameQuery } from '~/types'
 import GameGrid from './components/game-grid'
+import GameHeading from './components/game-heading'
 import GenresList from './components/genres-list'
 import Navbar from './components/navbar'
 import PlatformSelector from './components/platform-selector'
@@ -47,30 +48,32 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <Flex
-          gap={4}
-          // spacing={5} -> used with HStack instead of Flex
-          pl={2}
-          mb={5}
-        >
-          <PlatformSelector
-            selectedPlatform={platform}
-            onSelectPlatform={platform =>
-              setGameQuery({ ...gameQuery, platform })
-            }
+        <Box pl={2}>
+          <GameHeading gameQuery={gameQuery} />
+          <Flex
+            gap={4}
+            // spacing={5} -> used with HStack instead of Flex
+            mb={5}
+          >
+            <PlatformSelector
+              selectedPlatform={platform}
+              onSelectPlatform={platform =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            />
+            <SortSelector
+              sortOrder={gameQuery.sortOrder}
+              onSelectOrder={sortOrder =>
+                setGameQuery({ ...gameQuery, sortOrder })
+              }
+            />
+          </Flex>
+          <GameGrid
+            // selectedGenre={genre}
+            // selectedPlatform={platform}
+            gameQuery={gameQuery}
           />
-          <SortSelector
-            sortOrder={gameQuery.sortOrder}
-            onSelectOrder={sortOrder =>
-              setGameQuery({ ...gameQuery, sortOrder })
-            }
-          />
-        </Flex>
-        <GameGrid
-          // selectedGenre={genre}
-          // selectedPlatform={platform}
-          gameQuery={gameQuery}
-        />
+        </Box>
       </GridItem>
     </Grid>
   )
