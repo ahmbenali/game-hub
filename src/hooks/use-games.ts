@@ -7,7 +7,7 @@ const useGames = (
   // selectedPlatform: Platform | null
   gameQuery: GameQuery
 ) => {
-  const { genre, platform } = gameQuery
+  const { genre, platform, searchText, sortOrder } = gameQuery
   const platformId = platform ? platform.id : null
   const genreId = genre ? genre.id : null
 
@@ -19,7 +19,8 @@ const useGames = (
         // platforms: selectedPlatform?.id,
         genres: genreId,
         platforms: platformId,
-        ordering: gameQuery.sortOrder,
+        ordering: sortOrder,
+        search: searchText,
       },
     },
     // [genreId, platformId]

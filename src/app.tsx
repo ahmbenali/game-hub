@@ -17,6 +17,9 @@ function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
 
   const { genre, platform } = gameQuery ?? {}
+  const onSearch = (searchText: string) => {
+    setGameQuery({ ...gameQuery, searchText })
+  }
 
   return (
     <Grid
@@ -30,7 +33,7 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <Navbar />
+        <Navbar onSearch={onSearch} />
       </GridItem>
       <Show above="lg">
         <GridItem
