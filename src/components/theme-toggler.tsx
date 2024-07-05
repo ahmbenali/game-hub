@@ -10,7 +10,7 @@ function ThemeToggler() {
         isChecked={theme === 'dark'}
         onChange={toggleTheme}
       />
-      <Text>Dark Mode</Text>
+      {/* <Text whiteSpace="nowrap">Dark Mode</Text> */}
     </HStack>
   )
 }

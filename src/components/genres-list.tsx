@@ -24,7 +24,7 @@ function GenresList({ selectedGenre, onSelectGenre }: Props) {
   if (error) return null
 
   return (
-    <List>
+    <List mt={16} spacing={3}>
       {genres.map(genre => {
         const { id, name, image_background } = genre
         return (

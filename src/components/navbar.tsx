@@ -1,5 +1,6 @@
 import { HStack, Image } from '@chakra-ui/react'
 import logo from '../assets/logo.webp'
+import SearchInput from './search-input'
 import ThemeToggler from './theme-toggler'
 
 function Navbar() {
@@ -13,6 +14,8 @@ function Navbar() {
         src={logo}
         alt="logo"
       />
+
+      <SearchInput />
       <ThemeToggler />
     </HStack>
   )
