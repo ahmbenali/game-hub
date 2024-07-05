@@ -32,5 +32,12 @@ type Genre = {
   image_background: string
 }
 
-export type { FetchGamesResponse, FetchGenresResponse, Game, Genre, Platform }
+
+// query object pattern matching
+type GameQuery = {
+  genre: Genre | null
+  platform: Platform | null
+}
+
+export type { FetchGamesResponse, FetchGenresResponse, Game, Genre, Platform, GameQuery }
 

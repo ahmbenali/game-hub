@@ -4,8 +4,15 @@ import ThemeToggler from './them-toggler'
 
 function Navbar() {
   return (
-    <HStack justifyContent='space-between' p='10px'>
-      <Image boxSize='60px' src={logo} alt="logo" />
+    <HStack
+      justifyContent="space-between"
+      p="10px"
+    >
+      <Image
+        boxSize="60px"
+        src={logo}
+        alt="logo"
+      />
       <ThemeToggler />
     </HStack>
   )

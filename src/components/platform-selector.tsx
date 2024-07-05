@@ -18,6 +18,18 @@ type Props = {
 function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
   const { data: platforms, error, isLoading } = usePlatform()
 
+  const platformEls = platforms.map(platform => {
+    const { id, name } = platform
+    return (
+      <MenuItem
+        key={id}
+        onClick={() => onSelectPlatform(platform)}
+      >
+        {name}
+      </MenuItem>
+    )
+  })
+
   if (error) return null
   if (isLoading) return <Spinner />
 
@@ -25,21 +37,11 @@ function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
     <Menu>
       <MenuButton
         as={Button}
-        rightIcon={<BsChevronDown />}>
+        rightIcon={<BsChevronDown />}
+      >
         {selectedPlatform?.name || 'Platforms'}
       </MenuButton>
-      <MenuList>
-        {platforms.map(platform => {
-          const { id, name } = platform
-          return (
-            <MenuItem
-              onClick={() => onSelectPlatform(platform)}
-              key={id}>
-              {name}
-            </MenuItem>
-          )
-        })}
-      </MenuList>
+      <MenuList>{platformEls}</MenuList>
     </Menu>
   )
 }

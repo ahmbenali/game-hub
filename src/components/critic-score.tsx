@@ -8,7 +8,8 @@ function CriticScore({ score }: { score: number }) {
       px={2}
       borderRadius={4}
       fontSize={14}
-      colorScheme={color}>
+      colorScheme={color}
+    >
       {score}
     </Badge>
   )

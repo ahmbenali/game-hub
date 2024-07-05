@@ -6,7 +6,7 @@ function ThemeToggler() {
   return (
     <HStack>
       <Switch
-        colorScheme='green'
+        colorScheme="green"
         isChecked={theme === 'dark'}
         onChange={toggleTheme}
       />

@@ -30,7 +30,8 @@ function GenresList({ onSelectGenre, selectedGenre }: Props) {
         return (
           <ListItem
             key={id}
-            py="5px">
+            py="5px"
+          >
             <HStack>
               <Image
                 src={getCroppedImageUrl(image_background)!}
@@ -49,7 +50,8 @@ function GenresList({ onSelectGenre, selectedGenre }: Props) {
                 _hover={{
                   color: 'gray.600',
                   textDecoration: 'underline',
-                }}>
+                }}
+              >
                 {name}
               </Button>
             </HStack>

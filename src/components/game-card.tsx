@@ -5,19 +5,19 @@ import CriticScore from './critic-score'
 import PlatformIconList from './platform-icon-list'
 
 function GameCard({ game }: { game: Game }) {
-  const {
-    name,
-    background_image,
-    parent_platforms,
-    metacritic
-  } = game
+  const { name, background_image, parent_platforms, metacritic } = game
 
   return (
     <Card>
       {/* <Image src={background_image} /> */}
       <Image src={getCroppedImageUrl(background_image)!} />
       <CardBody>
-        <Heading fontSize="2xl" pb={2}>{name}</Heading>
+        <Heading
+          fontSize="2xl"
+          pb={2}
+        >
+          {name}
+        </Heading>
         <HStack justifyContent="space-between">
           <PlatformIconList
             platforms={parent_platforms?.map(p => p.platform)}
