@@ -1,6 +1,6 @@
 import { HStack, Image } from '@chakra-ui/react'
 import logo from '../assets/logo.webp'
-import ThemeToggler from './them-toggler'
+import ThemeToggler from './theme-toggler'
 
 function Navbar() {
   return (
