@@ -3,7 +3,8 @@ type Game = {
   name: string
   background_image: string
   parent_platforms: { platform: Platform }[]
-  metacritic?: number // rating score (0 - 100)
+  metacritic: number // rating score (0 - 100)
+  rating_top: number
 }
 
 type FetchGamesResponse = {
